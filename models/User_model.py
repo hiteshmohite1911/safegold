@@ -5,7 +5,7 @@ from config.database import Base
 class Roles(Base):
     __tablename__ = "roles"
     id = Column(Integer, primary_key=True)
-    name = Column(String(100), nullable=True)
+    name = Column(String(100), nullable=True, unique=True)
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, onupdate=func.now())
 
